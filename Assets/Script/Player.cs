@@ -9,9 +9,17 @@ public class Player : MonoBehaviour
 
     public float speed;
 
+    private Vector3 movement;
+    private Rigidbody rb;
+    int floorMAsk;
+    float camRayLength = 100f;
+
     private void Awake()
     {
+        floorMAsk = LayerMask.GetMask("Floor");
+
         health.Initialize();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Start is called before the first frame update
@@ -25,9 +33,28 @@ public class Player : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontal, 0.0f, vertical);
+        Move(horizontal, vertical);
+        Turn();
+    }
 
-        transform.Translate(movement*speed);
+    private void Move(float horizontal, float vertical)
+    {
+        movement.Set(horizontal, 0f, vertical);
+        movement = movement.normalized * speed * Time.deltaTime;
+        rb.MovePosition(transform.position + movement);
+    }
+
+    private void Turn()
+    {
+        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit floorHit;
+        if(Physics.Raycast(camRay, out floorHit, camRayLength, floorMAsk))
+        {
+            Vector3 playerToMouse = floorHit.point - transform.position;
+            playerToMouse.y = 0f;
+            Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+            rb.MoveRotation(newRotation);
+        }
     }
 
     public void TakeDamage(int damage)
@@ -35,7 +62,7 @@ public class Player : MonoBehaviour
         health.CurrentVal -= damage;
         if (health.CurrentVal <= 0)
         {
-           
+            Destroy(gameObject);
         }
     }
 }
