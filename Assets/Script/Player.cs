@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Vector3 offset = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
+            Vector3 offset = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
 
             GameObject newSpell = Instantiate(spell, transform.position + 0.1f * transform.forward, transform.rotation);
             newSpell.GetComponent<Rigidbody>().AddForce(transform.forward * spellForce);

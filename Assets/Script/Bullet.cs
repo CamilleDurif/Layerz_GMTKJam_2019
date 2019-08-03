@@ -24,10 +24,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"))
+        if (other.CompareTag("Enemy"))
         {
             other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 

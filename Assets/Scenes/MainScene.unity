@@ -257,7 +257,7 @@ PrefabInstance:
     - target: {fileID: 1931931463986387865, guid: 19424c14ceb2e07409aa95e104e775cc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 40.7
       objectReference: {fileID: 0}
     - target: {fileID: 1931931463986387865, guid: 19424c14ceb2e07409aa95e104e775cc,
         type: 3}
@@ -305,6 +305,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 770583540806951075, guid: e39cc84fba7c86749ad119d0df251f5f,
         type: 3}
+    - target: {fileID: 1931931463986387866, guid: 19424c14ceb2e07409aa95e104e775cc,
+        type: 3}
+      propertyPath: nbOfEnememies
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19424c14ceb2e07409aa95e104e775cc, type: 3}
 --- !u!1 &469645890
