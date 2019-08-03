@@ -128,5 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ab53b35eeb76a44b7db3cab1d8421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health:
+    bar: {fileID: 0}
+    maxVal: 10
+    currentVal: 0
   player: {fileID: 6083305708392266798, guid: dec6549ccc850460fbfee12758f9c700, type: 3}
   nav: {fileID: 770583540806951001}

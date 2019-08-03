@@ -23,4 +23,13 @@ public class Enemy : MonoBehaviour
     {
         nav.SetDestination(player.position);
     }
+
+    private void TakeDamage(int damage)
+    {
+        health.CurrentVal -= damage;
+        if (health.CurrentVal <= 0)
+        {
+
+        }
+    }
 }

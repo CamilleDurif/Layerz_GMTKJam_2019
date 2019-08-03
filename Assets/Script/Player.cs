@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         health.CurrentVal -= damage;
         if (health.CurrentVal <= 0)
         {
-            Destroy(gameObject);
+           
         }
     }
 }
