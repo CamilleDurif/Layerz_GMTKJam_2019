@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     private Stat stat;
 
     private bool isImmune = false;
+    private bool canShoot = true;
 
     private void Awake()
     {
@@ -110,7 +111,7 @@ public class Player : MonoBehaviour
     void Shoot()
     {
 
-        if (nbOfAmmo > 0)
+        if (nbOfAmmo > 0 && canShoot)
         {
             Vector3 offset = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
 
@@ -118,6 +119,10 @@ public class Player : MonoBehaviour
             newSpell.GetComponent<Rigidbody>().AddForce(transform.forward * spellForce);
 
             nbOfAmmo--;
+
+            Recoil();
+
+            StartCoroutine(WaitingToShoot(1.0f));
 
             //anim.SetBool("isAttacking", true);
         }
@@ -148,6 +153,13 @@ public class Player : MonoBehaviour
     void Pause()
     {
 
+    }
+
+    IEnumerator WaitingToShoot(float seconds)
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(seconds);
+        canShoot = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -191,6 +203,15 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void Recoil()
+    {
+        float force = 20;
+        Vector3 dir = Input.mousePosition - transform.position;
+        Debug.Log("DIR : " + dir.ToString());
+        dir = -dir.normalized;
+        rb.AddForce(dir * force, ForceMode.Impulse);
     }
 
     IEnumerator ImmunityAfterDamage(float duration, float blinkTime, Collider collider)
