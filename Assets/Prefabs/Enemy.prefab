@@ -131,8 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health:
     bar: {fileID: 2622000118617767285}
-    maxVal: 500
-    currentVal: 500
+    maxVal: 100
+    currentVal: 100
   nav: {fileID: 770583540806951001}
 --- !u!1 &3724718602157304849
 GameObject:

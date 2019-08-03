@@ -352,7 +352,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469645890}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -560,13 +560,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845681209}
-  m_LocalRotation: {x: 0.20973985, y: -0, z: -0, w: 0.9777573}
-  m_LocalPosition: {x: 0, y: 6.1, z: -16.65}
+  m_LocalRotation: {x: 0.68073595, y: -0, z: -0, w: 0.7325289}
+  m_LocalPosition: {x: -10.2, y: 31.4, z: 8.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 24.214, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 85.802, y: 0, z: 0}
 --- !u!1 &933736746 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2331239247632911993, guid: 298a7daaed00b424eacf32a49cc9bbe1,
@@ -686,7 +686,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
