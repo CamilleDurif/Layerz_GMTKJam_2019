@@ -29,7 +29,25 @@ public class Enemy : MonoBehaviour
         health.CurrentVal -= damage;
         if (health.CurrentVal <= 0)
         {
-            Destroy(gameObject);
+            StartCoroutine(Blink(0.1f, 0.1f));
         }
+    }
+
+
+    IEnumerator Blink(float duration, float blinkTime)
+    {
+        while(duration >= 0f)
+        {
+            duration -= Time.deltaTime;
+
+            Debug.Log(duration);
+
+            this.GetComponent<Renderer>().enabled = !this.GetComponent<Renderer>().enabled;
+
+            yield return new WaitForSeconds(blinkTime);
+        }
+
+        Destroy(gameObject);
+
     }
 }
