@@ -4,26 +4,34 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private Stat health;
 
     public float speed;
 
-    private Rigidbody2D rigidbody;
+    private void Awake()
+    {
+        health.Initialize();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
 
-        rigidbody = GetComponent<Rigidbody2D>();
-        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        float vertical = Input.GetAxis("Vertical");
-        float horizontal = Input.GetAxis("Horizontal");
-        Vector2 force = new Vector2(horizontal, vertical);
 
-        this.transform.Translate(force*speed);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health.CurrentVal -= damage;
+        if (health.CurrentVal <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
