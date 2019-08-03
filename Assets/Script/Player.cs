@@ -14,6 +14,12 @@ public class Player : MonoBehaviour
     int floorMAsk;
     float camRayLength = 100f;
 
+    public GameObject spell;
+    public float spellForce;
+
+    private Animator anim;
+    private Stat stat;
+
     private void Awake()
     {
         floorMAsk = LayerMask.GetMask("Floor");
@@ -25,6 +31,11 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    }
+
+    void Update()
+    {
+        Shoot();
     }
 
     // Update is called once per frame
@@ -55,6 +66,23 @@ public class Player : MonoBehaviour
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
             rb.MoveRotation(newRotation);
         }
+    }
+
+    private void Shoot()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Vector3 offset = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
+
+            GameObject newSpell = Instantiate(spell, transform.position + 0.1f * transform.forward, transform.rotation);
+            newSpell.GetComponent<Rigidbody>().AddForce(transform.forward * spellForce);
+
+            //anim.SetBool("isAttacking", true);
+        }
+        /*else if(!Input.GetButtonDown("Fire1"))
+        {
+            anim.SetBool("isAttacking", false);
+        }*/
     }
 
     public void TakeDamage(int damage)

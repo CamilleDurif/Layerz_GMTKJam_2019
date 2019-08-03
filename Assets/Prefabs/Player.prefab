@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5480769155812399586}
   - component: {fileID: 5480769155812399585}
   - component: {fileID: 5480769155812399584}
-  - component: {fileID: 5480769155812399591}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -127,17 +126,5 @@ MonoBehaviour:
     maxVal: 100
     currentVal: 100
   speed: 6
---- !u!114 &5480769155812399591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5480769155812399590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4be5e17d06ae4cadb6b02b036c9bcde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   spell: {fileID: 8722638222721567659, guid: a0b4dc2b4fd0246ec900c8eae2491335, type: 3}
   spellForce: 1000

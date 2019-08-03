@@ -891,6 +891,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: spellForce
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 5480769155812399590, guid: 94e301a573cdb8f449f7acaf143d0b72,
         type: 3}
       propertyPath: m_Name
@@ -961,6 +965,12 @@ PrefabInstance:
       propertyPath: health.bar
       value: 
       objectReference: {fileID: 6503175628500517354}
+    - target: {fileID: 5480769155812399584, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: spell
+      value: 
+      objectReference: {fileID: 8722638222721567659, guid: a0b4dc2b4fd0246ec900c8eae2491335,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94e301a573cdb8f449f7acaf143d0b72, type: 3}
 --- !u!114 &6503175628500517354 stripped

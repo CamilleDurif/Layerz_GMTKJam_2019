@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
         if (!other.CompareTag("Player"))
         {
             other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
