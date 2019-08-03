@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
         health.CurrentVal -= damage;
         if (health.CurrentVal <= 0)
         {
-            StartCoroutine(Blink(0.1f, 0.1f));
+            StartCoroutine(Blink(0.1f, 0.05f));
         }
     }
 

@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     private Animator anim;
     private Stat stat;
 
+    private bool isImmune = false;
+
     private void Awake()
     {
         floorMAsk = LayerMask.GetMask("Floor");
@@ -42,6 +44,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         InputAction();
+
     }
 
     // Update is called once per frame
@@ -76,7 +79,6 @@ public class Player : MonoBehaviour
 
     private void InputAction()
     {
-
         if (Input.GetButtonDown("Fire1"))
         {
             int layer = uiManager.GetCurrentLayer();
@@ -101,7 +103,6 @@ public class Player : MonoBehaviour
                 default:
                     Debug.Log("currentLayer Undefined");
                     break;
-
             }
         }
     }
@@ -149,14 +150,63 @@ public class Player : MonoBehaviour
 
     }
 
-
-
-    public void TakeDamage(int damage)
+    private void OnTriggerEnter(Collider other)
     {
-        health.CurrentVal -= damage;
+        if (other.CompareTag("Enemy"))
+        {
+            TakeDamage(10, other);
+        }
+    }
+
+    public void TakeDamage(int damage, Collider collider)
+    {
+        if (!isImmune)
+        {
+            health.CurrentVal -= damage;
+
+            isImmune = true;
+
+            //effet de recul
+            bouncingback(collider);
+
+            StartCoroutine(ImmunityAfterDamage(0.1f, 0.1f, collider));
+
+        }
+
+        void bouncingback(Collider coll)
+        {
+            // force is how forcefully we will push the player away from the enemy.
+            float force = 25;
+            // Calculate Angle Between the collision point and the player
+            Vector3 dir = collider.transform.position - transform.position;
+            Debug.Log("DIR : " + dir.ToString());
+            // We then get the opposite (-Vector3) and normalize it
+            dir = -dir.normalized;
+            // And finally we add force in the direction of dir and multiply it by force. 
+            // This will push back the player
+            rb.AddForce(dir * force, ForceMode.Impulse);
+        }
+
         if (health.CurrentVal <= 0)
         {
             Destroy(gameObject);
         }
     }
+
+    IEnumerator ImmunityAfterDamage(float duration, float blinkTime, Collider collider)
+    {
+
+        while (duration >= 0f)
+        {
+            duration -= Time.deltaTime;
+
+            this.GetComponent<Renderer>().enabled = !this.GetComponent<Renderer>().enabled;
+
+            yield return new WaitForSeconds(blinkTime);
+        }
+
+        isImmune = false;
+    }
+
+    public bool IsImmune() { return isImmune; }
 }

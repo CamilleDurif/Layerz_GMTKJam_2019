@@ -5039,6 +5039,7 @@ GameObject:
   - component: {fileID: 5480769155812399586}
   - component: {fileID: 5480769155812399585}
   - component: {fileID: 5480769155812399584}
+  - component: {fileID: 529137023441447284}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5156,6 +5157,19 @@ MonoBehaviour:
   speed: 10
   spell: {fileID: 8722638222721567659, guid: a0b4dc2b4fd0246ec900c8eae2491335, type: 3}
   spellForce: 1000
+--- !u!135 &529137023441447284
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480769155812399590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.76200426
+  m_Center: {x: 0, y: 0, z: -0.04429698}
 --- !u!1 &6503175628500517358
 GameObject:
   m_ObjectHideFlags: 0
