@@ -19,10 +19,10 @@ public class Attack : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            Vector2 offset = new Vector2(transform.position.x, transform.position.y - 1.5f);
+            Vector3 offset = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
 
             GameObject newSpell = Instantiate(spell, offset, transform.rotation);
-            newSpell.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(spellForce, 0f));
+            newSpell.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(spellForce, 0, 0));
 
             //anim.SetBool("isAttacking", true);
         }

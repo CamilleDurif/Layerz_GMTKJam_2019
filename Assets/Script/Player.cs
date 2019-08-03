@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        //health.Initialize();
+        health.Initialize();
     }
 
     // Start is called before the first frame update
@@ -32,10 +32,10 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        /*health.CurrentVal -= damage;
+        health.CurrentVal -= damage;
         if (health.CurrentVal <= 0)
         {
             Destroy(gameObject);
-        }*/
+        }
     }
 }
