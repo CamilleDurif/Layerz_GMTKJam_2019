@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public UIManager uiManager;
+
     [SerializeField]
     private Stat health;
+
+    public int nbOfAmmo = 10;
+
+    private int maxAmmo = 10;
 
     public float speed;
 
@@ -35,7 +41,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Shoot();
+        InputAction();
     }
 
     // Update is called once per frame
@@ -68,14 +74,49 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    private void InputAction()
     {
+
         if (Input.GetButtonDown("Fire1"))
+        {
+            int layer = uiManager.GetCurrentLayer();
+
+            switch (layer)
+            {
+                case UIManager.ENNEMIES:
+                    Shoot();
+                    break;
+                case UIManager.WALLS:
+                    Shoot();
+                    break;
+                case UIManager.HEALTH:
+                    Heal();
+                    break;
+                case UIManager.AMMO:
+                    Reload();
+                    break;
+                case UIManager.PAUSE:
+                    Pause();
+                    break;
+                default:
+                    Debug.Log("currentLayer Undefined");
+                    break;
+
+            }
+        }
+    }
+
+    void Shoot()
+    {
+
+        if (nbOfAmmo > 0)
         {
             Vector3 offset = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
 
             GameObject newSpell = Instantiate(spell, transform.position + 0.1f * transform.forward, transform.rotation);
             newSpell.GetComponent<Rigidbody>().AddForce(transform.forward * spellForce);
+
+            nbOfAmmo--;
 
             //anim.SetBool("isAttacking", true);
         }
@@ -84,6 +125,29 @@ public class Player : MonoBehaviour
             anim.SetBool("isAttacking", false);
         }*/
     }
+
+    void Heal()
+    {
+        if(health.CurrentVal <= health.MaxVal)
+        {
+            health.CurrentVal += 10;
+        }
+    }
+
+    void Reload()
+    {
+        if (nbOfAmmo < maxAmmo)
+        {
+            nbOfAmmo++;
+        }
+    }
+
+    void Pause()
+    {
+
+    }
+
+
 
     public void TakeDamage(int damage)
     {

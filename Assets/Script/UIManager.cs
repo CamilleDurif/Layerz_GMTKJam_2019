@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,11 +11,11 @@ public class UIManager : MonoBehaviour
 
     private int currentLayer = 1;
 
-    const int ENNEMIES = 1;
-    const int WALLS = 2;
-    const int HEALTH = 3;
-    const int AMMO = 4;
-    const int PAUSE = 5;
+    public const int ENNEMIES = 1;
+    public const int WALLS = 2;
+    public const int HEALTH = 3;
+    public const int AMMO = 4;
+    public const int PAUSE = 5;
 
 
     // Start is called before the first frame update
@@ -33,6 +34,10 @@ public class UIManager : MonoBehaviour
             SwitchLayer();
 
         }
+
+        //updateUI
+        ammoLayer.GetComponentInChildren<Text>().text = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().nbOfAmmo.ToString();
+
     }
 
     private void SwitchLayer()
@@ -89,5 +94,10 @@ public class UIManager : MonoBehaviour
         {
             enemies[i].GetComponent<MeshRenderer>().enabled = isVisible;
         }
+    }
+
+    public int GetCurrentLayer()
+    {
+        return currentLayer;
     }
 }

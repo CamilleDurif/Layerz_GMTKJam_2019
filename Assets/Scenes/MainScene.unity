@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 469645891}
   m_Layer: 8
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -352,7 +352,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469645890}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -976,6 +976,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8722638222721567659, guid: a0b4dc2b4fd0246ec900c8eae2491335,
         type: 3}
+    - target: {fileID: 5480769155812399584, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 94784285}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94e301a573cdb8f449f7acaf143d0b72, type: 3}
 --- !u!114 &6503175628500517354 stripped
