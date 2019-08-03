@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour
                 break;
             case WALLS:
                 resetUI();
-                //TODO walls visible
+                wallsVisible(true);
                 break;
             case HEALTH:
                 resetUI();
@@ -68,6 +68,7 @@ public class UIManager : MonoBehaviour
         ammoLayer.SetActive(false);
         pauseLayer.SetActive(false);
         enemyVisible(false);
+        wallsVisible(false);
     }
 
     private void enemyVisible(bool isVisible)
@@ -75,6 +76,16 @@ public class UIManager : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         for(int i=0; i<enemies.Length; i++)
+        {
+            enemies[i].GetComponent<MeshRenderer>().enabled = isVisible;
+        }
+    }
+
+    private void wallsVisible(bool isVisible)
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Walls");
+
+        for (int i = 0; i < enemies.Length; i++)
         {
             enemies[i].GetComponent<MeshRenderer>().enabled = isVisible;
         }
