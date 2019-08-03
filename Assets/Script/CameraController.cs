@@ -24,8 +24,8 @@ public class CameraController : MonoBehaviour
     void Update()
     {
 
-        xDifference = player.transform.position.x - transform.position.x;
-        zDifference = player.transform.position.z - transform.position.z;
+        xDifference = Mathf.Abs(player.transform.position.x - transform.position.x);
+        zDifference = Mathf.Abs(player.transform.position.z - transform.position.z);
 
         if(xDifference > movementThreshold || zDifference > movementThreshold)
         {
