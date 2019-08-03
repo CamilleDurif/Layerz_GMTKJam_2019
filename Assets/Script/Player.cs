@@ -128,10 +128,12 @@ public class Player : MonoBehaviour
 
     void Heal()
     {
-        if(health.CurrentVal <= health.MaxVal)
+        if(health.CurrentVal < health.MaxVal)
         {
             health.CurrentVal += 10;
+            GetComponentInChildren<ParticleSystem>().Play();
         }
+
     }
 
     void Reload()
