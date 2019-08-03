@@ -45,7 +45,5 @@ public class BarScript : MonoBehaviour
     private float Map(float value, float inMin, float inMax, float outMin, float outMax)
     {
         return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
-        //(78 - 0) * (1 -  0) / (230 - 0) + 0
-        // 78 * 1 / 230 = 0,339
     }
 }
