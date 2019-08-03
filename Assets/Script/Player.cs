@@ -115,12 +115,13 @@ public class Player : MonoBehaviour
         {
             Vector3 offset = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
 
-            GameObject newSpell = Instantiate(spell, transform.position + 0.1f * transform.forward, transform.rotation);
+            Vector3 bulletPosition = transform.position + 0.1f * transform.forward;
+            GameObject newSpell = Instantiate(spell, bulletPosition, transform.rotation);
             newSpell.GetComponent<Rigidbody>().AddForce(transform.forward * spellForce);
 
             nbOfAmmo--;
 
-            Recoil();
+            Recoil(bulletPosition);
 
             StartCoroutine(WaitingToShoot(1.0f));
 
@@ -188,7 +189,7 @@ public class Player : MonoBehaviour
         void bouncingback(Collider coll)
         {
             // force is how forcefully we will push the player away from the enemy.
-            float force = 25;
+            float force = 10;
             // Calculate Angle Between the collision point and the player
             Vector3 dir = collider.transform.position - transform.position;
             Debug.Log("DIR : " + dir.ToString());
@@ -205,10 +206,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Recoil()
+    void Recoil(Vector3 bulletPos)
     {
-        float force = 20;
-        Vector3 dir = Input.mousePosition - transform.position;
+        float force = 5;
+        Vector3 dir = bulletPos - transform.position;
         Debug.Log("DIR : " + dir.ToString());
         dir = -dir.normalized;
         rb.AddForce(dir * force, ForceMode.Impulse);

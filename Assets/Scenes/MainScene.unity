@@ -3954,6 +3954,16 @@ PrefabInstance:
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 94784285}
+    - target: {fileID: 5480769155812399596, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 5480769155812399585, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1352667348, guid: 94e301a573cdb8f449f7acaf143d0b72, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3973,7 +3983,8 @@ PrefabInstance:
       propertyPath: CollisionModule.collisionMessages
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5480769155812399586, guid: 94e301a573cdb8f449f7acaf143d0b72, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94e301a573cdb8f449f7acaf143d0b72, type: 3}
 --- !u!1001 &8810740967052641325
 PrefabInstance:
