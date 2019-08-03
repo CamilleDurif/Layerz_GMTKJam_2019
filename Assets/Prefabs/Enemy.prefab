@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 770583540806951000}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770583540806951075}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -128,5 +128,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ab53b35eeb76a44b7db3cab1d8421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 6083305708392266798, guid: dec6549ccc850460fbfee12758f9c700, type: 3}
   nav: {fileID: 770583540806951001}

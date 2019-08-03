@@ -41,8 +41,7 @@ public class UIManager : MonoBehaviour
         {
             case ENNEMIES:
                 resetUI();
-                //TODO 
-                //ennemies visible
+                enemyVisible(true);
                 break;
             case WALLS:
                 resetUI();
@@ -68,5 +67,16 @@ public class UIManager : MonoBehaviour
         healthLayer.SetActive(false);
         ammoLayer.SetActive(false);
         pauseLayer.SetActive(false);
+        enemyVisible(false);
+    }
+
+    private void enemyVisible(bool isVisible)
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        for(int i=0; i<enemies.Length; i++)
+        {
+            enemies[i].GetComponent<MeshRenderer>().enabled = isVisible;
+        }
     }
 }
