@@ -1418,6 +1418,7 @@ GameObject:
   - component: {fileID: 845681211}
   - component: {fileID: 845681210}
   - component: {fileID: 845681213}
+  - component: {fileID: 845681214}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -1508,6 +1509,25 @@ MonoBehaviour:
   zDifference: 0
   xMovementThreshold: 8
   zMovementThreshold: 3
+--- !u!95 &845681214
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845681209}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef242a1fdb06e43ee930adab9f7ed5dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &884367705
 GameObject:
   m_ObjectHideFlags: 0
@@ -3958,6 +3978,11 @@ PrefabInstance:
         type: 3}
       propertyPath: nbOfAmmo
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5480769155812399584, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: spellForce
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1352667348, guid: 94e301a573cdb8f449f7acaf143d0b72, type: 3}
       propertyPath: m_Camera

@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     public float spellForce;
 
     private Animator anim;
+    private Animator cameraAnim;
+
     private Stat stat;
 
     private bool isImmune = false;
@@ -43,7 +45,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
-        //renderers = GetComponentsInChildren<Renderer>();
+        cameraAnim = Camera.main.GetComponent<Animator>();
     }
 
     void Update()
@@ -125,16 +127,11 @@ public class Player : MonoBehaviour
 
             nbOfAmmo--;
 
-            Recoil(bulletPosition);
-
             StartCoroutine(WaitingToShoot(1.0f));
 
             anim.SetTrigger("isShooting");
         }
-        /*else if(!Input.GetButtonDown("Fire1"))
-        {
-            anim.SetBool("isAttacking", false);
-        }*/
+
     }
 
     void Heal()
@@ -179,44 +176,19 @@ public class Player : MonoBehaviour
     {
         if (!isImmune)
         {
+            cameraAnim.SetTrigger("isShaking");
             health.CurrentVal -= damage;
 
             isImmune = true;
 
-            //effet de recul
-            bouncingback(collider);
-
             StartCoroutine(ImmunityAfterDamage(0.1f, 0.1f, collider));
 
-        }
-
-        void bouncingback(Collider coll)
-        {
-            // force is how forcefully we will push the player away from the enemy.
-            float force = 10;
-            // Calculate Angle Between the collision point and the player
-            Vector3 dir = collider.transform.position - transform.position;
-            Debug.Log("DIR : " + dir.ToString());
-            // We then get the opposite (-Vector3) and normalize it
-            dir = -dir.normalized;
-            // And finally we add force in the direction of dir and multiply it by force. 
-            // This will push back the player
-            rb.AddForce(dir * force, ForceMode.Impulse);
         }
 
         if (health.CurrentVal <= 0)
         {
             Destroy(gameObject);
         }
-    }
-
-    void Recoil(Vector3 bulletPos)
-    {
-        float force = 5;
-        Vector3 dir = bulletPos - transform.position;
-        Debug.Log("DIR : " + dir.ToString());
-        dir = -dir.normalized;
-        rb.AddForce(dir * force, ForceMode.Impulse);
     }
 
     IEnumerator ImmunityAfterDamage(float duration, float blinkTime, Collider collider)
