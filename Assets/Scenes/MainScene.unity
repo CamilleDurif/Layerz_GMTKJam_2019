@@ -3991,7 +3991,7 @@ PrefabInstance:
     - target: {fileID: 5480769155812399597, guid: 94e301a573cdb8f449f7acaf143d0b72,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5480769155812399597, guid: 94e301a573cdb8f449f7acaf143d0b72,
         type: 3}
@@ -4076,6 +4076,31 @@ PrefabInstance:
         type: 3}
       propertyPath: CollisionModule.collisionMessages
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 529137023441447284, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.57526684
+      objectReference: {fileID: 0}
+    - target: {fileID: 529137023441447284, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.6042001
+      objectReference: {fileID: 0}
+    - target: {fileID: 529137023441447284, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.025151968
+      objectReference: {fileID: 0}
+    - target: {fileID: 6511848722410727404, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: m_Height
+      value: 3.4742446
+      objectReference: {fileID: 0}
+    - target: {fileID: 6511848722410727404, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.2074697
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5480769155812399586, guid: 94e301a573cdb8f449f7acaf143d0b72, type: 3}
