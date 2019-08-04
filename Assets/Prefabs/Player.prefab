@@ -5300,6 +5300,7 @@ MonoBehaviour:
     maxVal: 100
     currentVal: 100
   nbOfAmmo: 50
+  maxAmmo: 10
   speed: 2
   spell: {fileID: 8722638222721567659, guid: a0b4dc2b4fd0246ec900c8eae2491335, type: 3}
   spellForce: 500
@@ -5309,6 +5310,7 @@ MonoBehaviour:
   - {fileID: 505161970110451530}
   - {fileID: 1874619700226656046}
   camera: {fileID: 0}
+  pauseText: {fileID: 0}
 --- !u!135 &7823418542333594536
 SphereCollider:
   m_ObjectHideFlags: 0

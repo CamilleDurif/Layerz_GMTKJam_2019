@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -9,9 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Stat health;
 
-    public int nbOfAmmo = 10;
-
-    private int maxAmmo = 10;
+   
+    public int nbOfAmmo;
+    public int maxAmmo;
 
     public float speed;
 
@@ -40,6 +41,8 @@ public class Player : MonoBehaviour
     private AudioSource damageSound;
     private AudioSource reloadSound;
     private AudioSource healingSound;
+
+    public TextMeshProUGUI pauseText; 
 
     private void Awake()
     {
@@ -176,6 +179,17 @@ public class Player : MonoBehaviour
 
     void Pause()
     {
+        if(Time.timeScale <= 0f)
+        {
+            Time.timeScale = 0f;
+            pauseText.text = "Click to unpause";
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            pauseText.text = "Click to pause";
+        }
+
 
     }
 
