@@ -29,6 +29,7 @@ public class keyRoom : MonoBehaviour
         {
             anim.SetTrigger("isActivated");
             StartCoroutine(bossRoomTextActived());
+            GameObject.FindGameObjectWithTag("Door").SetActive(false);
         }
     }
 
