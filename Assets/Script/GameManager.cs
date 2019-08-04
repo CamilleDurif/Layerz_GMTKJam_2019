@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public AudioSource theme; 
+    private AudioSource theme; 
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.visible = false;
+        theme = GameObject.Find("theme").GetComponent<AudioSource>();
         theme.Play();
     }
 

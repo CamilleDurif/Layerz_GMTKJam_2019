@@ -14,13 +14,15 @@ public class Enemy : MonoBehaviour
 
     public MeshRenderer[] renderers;
 
-    public AudioSource enemyDeathSound; 
+    private AudioSource enemyDeathSound;
+    private AudioSource damageSound;
 
 
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        //enemyDeathSound = GameObject.Find("enemy death").GetComponent<AudioSource>();
+        enemyDeathSound = GameObject.Find("enemy death").GetComponent<AudioSource>();
+        damageSound = GameObject.Find("damage").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour
     private void TakeDamage(int damage)
     {
         health.CurrentVal -= damage;
+        damageSound.Play();
 
         StartCoroutine(Blink(0.1f, 0.05f));
 

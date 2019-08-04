@@ -35,7 +35,11 @@ public class Player : MonoBehaviour
 
     public CameraController camera;
 
-    public AudioSource gameOverSound; 
+    private AudioSource gameOverSound;
+    private AudioSource shootSound;
+    private AudioSource damageSound;
+    private AudioSource reloadSound;
+    private AudioSource healingSound;
 
     private void Awake()
     {
@@ -50,6 +54,11 @@ public class Player : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         cameraAnim = Camera.main.GetComponent<Animator>();
+        gameOverSound = GameObject.Find("game over").GetComponent<AudioSource>();
+        shootSound = GameObject.Find("shoot").GetComponent<AudioSource>();
+        damageSound = GameObject.Find("damage").GetComponent<AudioSource>();
+        reloadSound = GameObject.Find("reload").GetComponent<AudioSource>();
+        healingSound = GameObject.Find("healing").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -138,6 +147,7 @@ public class Player : MonoBehaviour
             camera.ShakeElapsedTime = camera.ShakeDuration;
 
             anim.SetTrigger("isShooting");
+            shootSound.Play();
 
             StartCoroutine(WaitingToShoot(1.0f));
         }
@@ -149,6 +159,7 @@ public class Player : MonoBehaviour
         if(health.CurrentVal < health.MaxVal)
         {
             health.CurrentVal += 10;
+            healingSound.Play();
             GetComponentInChildren<ParticleSystem>().Play();
         }
 
@@ -159,6 +170,7 @@ public class Player : MonoBehaviour
         if (nbOfAmmo < maxAmmo)
         {
             nbOfAmmo++;
+            reloadSound.Play();
         }
     }
 
@@ -188,6 +200,7 @@ public class Player : MonoBehaviour
         {
 
             camera.ShakeElapsedTime = camera.ShakeDuration;
+            damageSound.Play();
 
             health.CurrentVal -= damage;
 
@@ -199,8 +212,7 @@ public class Player : MonoBehaviour
 
         if (health.CurrentVal <= 0)
         {
-            gameOverSound.Play();
-            Destroy(gameObject);
+            StartCoroutine(PlayerDeath());
         }
     }
 
@@ -222,4 +234,16 @@ public class Player : MonoBehaviour
     }
 
     public bool IsImmune() { return isImmune; }
+
+    IEnumerator PlayerDeath()
+    {
+        gameOverSound.Play();
+
+        while(gameOverSound.isPlaying)
+        {
+            yield return null; 
+        }
+
+        Destroy(gameObject);
+    }
 }
