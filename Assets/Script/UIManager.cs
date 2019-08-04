@@ -20,12 +20,13 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI ammoText;
 
-    public Player player;
+    private Player player;
 
     // Start is called before the first frame update
     void Start()
     {
         resetUI();
+        player = GameObject.Find("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame

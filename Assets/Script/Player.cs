@@ -140,7 +140,7 @@ public class Player : MonoBehaviour
             Vector3 offset = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
 
             Vector3 bulletPosition = transform.position + 0.1f * transform.forward;
-            GameObject newSpell = Instantiate(spell, bulletPosition, transform.rotation);
+            GameObject newSpell = Instantiate(spell, bulletPosition, this.transform.rotation);
             newSpell.GetComponent<Rigidbody>().AddForce(transform.forward * spellForce);
 
             nbOfAmmo--;
