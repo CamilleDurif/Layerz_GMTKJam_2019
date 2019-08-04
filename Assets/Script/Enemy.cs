@@ -41,8 +41,13 @@ public class Enemy : MonoBehaviour
             duration -= Time.deltaTime;
 
             Debug.Log(duration);
+            
+            MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
 
-            this.GetComponent<Renderer>().enabled = !this.GetComponent<Renderer>().enabled;
+            for (int j = 0; j < renderers.Length; j++)
+            {
+                renderers[j].enabled = !renderers[j].enabled;
+            }
 
             yield return new WaitForSeconds(blinkTime);
         }
