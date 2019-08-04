@@ -89,9 +89,12 @@ public class UIManager : MonoBehaviour
         {
             Enemy enemy = enemies[i].GetComponent<Enemy>();
 
-            for(int j =0; j<enemy.renderers.Length; j++)
-            {
-                enemy.renderers[j].enabled = isVisible;
+            if (enemy != null) {
+
+                for (int j = 0; j < enemy.renderers.Length; j++)
+                {
+                    enemy.renderers[j].enabled = isVisible;
+                }
             }
 
         }
