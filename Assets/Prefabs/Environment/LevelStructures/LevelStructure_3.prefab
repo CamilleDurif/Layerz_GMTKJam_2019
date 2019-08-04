@@ -795,6 +795,46 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3273669387541625352, guid: a32a1ed759e5f46a3b0f99fa4662c03c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273669388668643982, guid: a32a1ed759e5f46a3b0f99fa4662c03c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273669388347098101, guid: a32a1ed759e5f46a3b0f99fa4662c03c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318824604505063148, guid: a32a1ed759e5f46a3b0f99fa4662c03c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318824604047292781, guid: a32a1ed759e5f46a3b0f99fa4662c03c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318824604937741560, guid: a32a1ed759e5f46a3b0f99fa4662c03c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 542264504390630720, guid: a32a1ed759e5f46a3b0f99fa4662c03c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 542264504281422599, guid: a32a1ed759e5f46a3b0f99fa4662c03c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: 1639103356816687606, guid: a32a1ed759e5f46a3b0f99fa4662c03c,
         type: 3}
       propertyPath: m_Size.x

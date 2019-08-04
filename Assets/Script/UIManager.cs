@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI ammoText;
 
+    public Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)){
+        if (Input.GetKeyDown(KeyCode.Tab) && !player.isPaused){
             currentLayer++;
             if(currentLayer == 6) { currentLayer = 1; }
 
@@ -95,16 +96,21 @@ public class UIManager : MonoBehaviour
         }
 
     }
-
+    
     private void wallsVisible(bool isVisible)
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Walls");
+        GameObject[] walls = GameObject.FindGameObjectsWithTag("Walls");
 
-        for (int i = 0; i < enemies.Length; i++)
+        for (int i = 0; i < walls.Length; i++)
         {
-            enemies[i].GetComponent<MeshRenderer>().enabled = isVisible;
+            if (walls[i].GetComponent<MeshRenderer>() != null)
+            {
+                walls[i].GetComponent<MeshRenderer>().enabled = isVisible;
+            }
         }
     }
+
+
 
     public int GetCurrentLayer()
     {

@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
     private AudioSource reloadSound;
     private AudioSource healingSound;
 
+    public bool isPaused = false;
+
     public TextMeshProUGUI pauseText; 
 
     private void Awake()
@@ -179,15 +181,17 @@ public class Player : MonoBehaviour
 
     void Pause()
     {
-        if(Time.timeScale <= 0f)
-        {
-            Time.timeScale = 0f;
-            pauseText.text = "Click to unpause";
-        }
-        else
+        if(isPaused)
         {
             Time.timeScale = 1f;
             pauseText.text = "Click to pause";
+            isPaused = false;
+        }
+        else
+        {
+            Time.timeScale = 0f;
+            pauseText.text = "Click to unpause";
+            isPaused = true;
         }
 
 
