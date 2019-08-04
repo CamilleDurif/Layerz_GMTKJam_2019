@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using TMPro;
 
 public class Boss : MonoBehaviour
 {
@@ -17,23 +16,16 @@ public class Boss : MonoBehaviour
 
     private AudioSource enemyDeathSound;
     private AudioSource damageSound;
-    private AudioSource successSound;
-    private AudioSource theme;
 
-    private TextMeshProUGUI winText; 
 
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyDeathSound = GameObject.Find("enemy death").GetComponent<AudioSource>();
         damageSound = GameObject.Find("damage").GetComponent<AudioSource>();
-        successSound = GameObject.Find("success").GetComponent<AudioSource>();
-        theme = GameObject.Find("theme").GetComponent<AudioSource>();
-
-        winText = GameObject.Find("you win").GetComponent<TextMeshProUGUI>();
-        winText.enabled = false;
     }
 
+    // Update is called once per frame
     void Update()
     {
         nav.SetDestination(player.position);
@@ -52,6 +44,7 @@ public class Boss : MonoBehaviour
 
         }
     }
+
 
     IEnumerator Blink(float duration, float blinkTime)
     {
@@ -85,11 +78,7 @@ public class Boss : MonoBehaviour
 
             Destroy(gameObject);
 
-            theme.Stop();
-            successSound.Play();
-            winText.enabled = true;
-
-
+            Debug.Log("YOU WIN");
         }
     }
 }
