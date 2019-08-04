@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
 
     public Renderer[] renderers;
 
+    public CameraController camera;
+
     private void Awake()
     {
         floorMAsk = LayerMask.GetMask("Floor");
@@ -127,9 +129,15 @@ public class Player : MonoBehaviour
 
             nbOfAmmo--;
 
-            StartCoroutine(WaitingToShoot(1.0f));
+            camera.ShakeAmplitude = 0.8f;
+            camera.ShakeFrequency = 1.5f;
+            camera.ShakeDuration = 0.3f;
+
+            camera.ShakeElapsedTime = camera.ShakeDuration;
 
             anim.SetTrigger("isShooting");
+
+            StartCoroutine(WaitingToShoot(1.0f));
         }
 
     }
@@ -176,7 +184,9 @@ public class Player : MonoBehaviour
     {
         if (!isImmune)
         {
-            cameraAnim.SetTrigger("isShaking");
+
+            camera.ShakeElapsedTime = camera.ShakeDuration;
+
             health.CurrentVal -= damage;
 
             isImmune = true;
