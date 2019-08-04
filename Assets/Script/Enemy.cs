@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
 
     private Transform player;
 
+    public MeshRenderer[] renderers;
+
 
     void Awake()
     {
@@ -27,9 +29,13 @@ public class Enemy : MonoBehaviour
     private void TakeDamage(int damage)
     {
         health.CurrentVal -= damage;
+
+        StartCoroutine(Blink(0.1f, 0.05f));
+
         if (health.CurrentVal <= 0)
         {
             StartCoroutine(Blink(0.1f, 0.05f));
+            Destroy(gameObject);
         }
     }
 
@@ -41,8 +47,6 @@ public class Enemy : MonoBehaviour
             duration -= Time.deltaTime;
 
             Debug.Log(duration);
-            
-            MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
 
             for (int j = 0; j < renderers.Length; j++)
             {
@@ -51,8 +55,6 @@ public class Enemy : MonoBehaviour
 
             yield return new WaitForSeconds(blinkTime);
         }
-
-        Destroy(gameObject);
 
     }
 }

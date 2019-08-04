@@ -129,9 +129,15 @@ public class Player : MonoBehaviour
 
             nbOfAmmo--;
 
-            StartCoroutine(WaitingToShoot(1.0f));
+            camera.ShakeAmplitude = 0.8f;
+            camera.ShakeFrequency = 1.5f;
+            camera.ShakeDuration = 0.3f;
+
+            camera.ShakeElapsedTime = camera.ShakeDuration;
 
             anim.SetTrigger("isShooting");
+
+            StartCoroutine(WaitingToShoot(1.0f));
         }
 
     }

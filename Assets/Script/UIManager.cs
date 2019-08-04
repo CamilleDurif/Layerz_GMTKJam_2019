@@ -80,15 +80,17 @@ public class UIManager : MonoBehaviour
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        for(int i=0; i<enemies.Length; i++)
+        for (int i = 0; i < enemies.Length; i++)
         {
-            MeshRenderer[] renderers = enemies[i].GetComponentsInChildren<MeshRenderer>();
+            Enemy enemy = enemies[i].GetComponent<Enemy>();
 
-            for(int j=0; j< renderers.Length; j++)
+            for(int j =0; j<enemy.renderers.Length; j++)
             {
-                renderers[i].enabled = isVisible;
+                enemy.renderers[j].enabled = isVisible;
             }
+
         }
+
     }
 
     private void wallsVisible(bool isVisible)
