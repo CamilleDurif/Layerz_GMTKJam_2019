@@ -5449,11 +5449,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5480769155812399597}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 372032816a90742c082fcae135671961,
+    - target: {fileID: -3701727588016112575, guid: 372032816a90742c082fcae135671961,
         type: 3}
-      propertyPath: m_Name
-      value: CharacterModel
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41031f7a933cc4b06bdde059fb4a00fa, type: 2}
     - target: {fileID: -4216859302048453862, guid: 372032816a90742c082fcae135671961,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5508,6 +5508,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939468492834736797, guid: 372032816a90742c082fcae135671961,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3245f63450a1242dc88b5bceeb207626, type: 2}
+    - target: {fileID: -927199367670048503, guid: 372032816a90742c082fcae135671961,
+        type: 3}
+      propertyPath: m_Name
+      value: CharacterModel
       objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: 372032816a90742c082fcae135671961,
         type: 3}
