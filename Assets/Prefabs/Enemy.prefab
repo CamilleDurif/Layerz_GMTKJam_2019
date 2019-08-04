@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 770583540806951079}
   - component: {fileID: 770583540806951000}
-  - component: {fileID: 5711368111401654803}
-  - component: {fileID: 6645095977623729073}
+  - component: {fileID: 4690529634048116679}
+  - component: {fileID: 7330975384335946388}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -51,7 +51,7 @@ MonoBehaviour:
     bar: {fileID: 2622000118617767285}
     maxVal: 100
     currentVal: 100
-  nav: {fileID: 5711368111401654803}
+  nav: {fileID: 7330975384335946388}
   renderers:
   - {fileID: 3422204208795690623}
   - {fileID: 7608855566434920169}
@@ -60,29 +60,7 @@ MonoBehaviour:
   - {fileID: 3910981794817907489}
   - {fileID: 3162489142078311419}
   - {fileID: 7592027817881935465}
---- !u!195 &5711368111401654803
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770583540806951075}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!135 &6645095977623729073
+--- !u!135 &4690529634048116679
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,8 +71,30 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.0003211
-  m_Center: {x: 0.005081892, y: 1.1719594, z: 0.12497401}
+  m_Radius: 0.20729363
+  m_Center: {x: 0.04544586, y: 0, z: -0.03246492}
+--- !u!195 &7330975384335946388
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770583540806951075}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.2
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.5
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3724718602157304849
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,17 +468,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8e88a25d264be52499f180c3cee13842,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8e88a25d264be52499f180c3cee13842,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8e88a25d264be52499f180c3cee13842,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -3701727588016112575, guid: 8e88a25d264be52499f180c3cee13842,
         type: 3}

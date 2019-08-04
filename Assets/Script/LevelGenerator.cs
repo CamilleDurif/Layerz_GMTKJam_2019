@@ -17,8 +17,8 @@ public class LevelGenerator : MonoBehaviour
     private Vector3 roomPosition;
     private Vector3 levelPosition; 
 
-    private int xModifier = 0;
-    private int zModifier = 0;
+    private float xModifier = 0;
+    private float zModifier = 0;
 
     private int index;
     private GameObject room;
@@ -43,7 +43,7 @@ public class LevelGenerator : MonoBehaviour
         index = Random.Range(0, levelStructures.Length);
         levelStructure = levelStructures[index];
 
-        levelPosition = new Vector3(0, 0, 0);
+        levelPosition = new Vector3(5.94f, 3.348f, 4.02f);
 
         GameObject newLevel = Instantiate(levelStructure, levelPosition, levelStructure.transform.rotation);
     }
@@ -57,8 +57,8 @@ public class LevelGenerator : MonoBehaviour
         {
             for(j = 0; j < columns; j++)
             {
-                xModifier = (i + 1);
-                zModifier = (j + 1); 
+                xModifier = (i * 4.8f);
+                zModifier = (j * 4.8f); 
                 roomPosition = new Vector3(xModifier, 0, zModifier);
 
                 if(i == 0 && j == 0)

@@ -390,5 +390,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7263220546146159647, guid: cf7e89c14701b4b018eac124ae2aca93,
         type: 3}
+    - target: {fileID: 725009749445458771, guid: 8136f733bd07f4a99a2f3db4bc0e7ef3,
+        type: 3}
+      propertyPath: bossRoom
+      value: 
+      objectReference: {fileID: 1196634462146640802, guid: 6e8431c9b0e7234459f95ea4a82c0804,
+        type: 3}
+    - target: {fileID: 725009749445458771, guid: 8136f733bd07f4a99a2f3db4bc0e7ef3,
+        type: 3}
+      propertyPath: startRoom
+      value: 
+      objectReference: {fileID: 1196634462146640802, guid: 2866e02642eefe64aa4a0ab17dfd7de7,
+        type: 3}
+    - target: {fileID: 725009749445458771, guid: 8136f733bd07f4a99a2f3db4bc0e7ef3,
+        type: 3}
+      propertyPath: keyRoom
+      value: 
+      objectReference: {fileID: 1196634462146640802, guid: 23ffb6f787ab3bd42920b776cf052a5c,
+        type: 3}
+    - target: {fileID: 725009749445458771, guid: 8136f733bd07f4a99a2f3db4bc0e7ef3,
+        type: 3}
+      propertyPath: rooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 1196634462146640802, guid: bc2b9a03cd6301944bd35b557e5bcb73,
+        type: 3}
+    - target: {fileID: 725009749445458771, guid: 8136f733bd07f4a99a2f3db4bc0e7ef3,
+        type: 3}
+      propertyPath: rooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 1196634462146640802, guid: bc2b9a03cd6301944bd35b557e5bcb73,
+        type: 3}
+    - target: {fileID: 725009749445458771, guid: 8136f733bd07f4a99a2f3db4bc0e7ef3,
+        type: 3}
+      propertyPath: rooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 1196634462146640802, guid: bc2b9a03cd6301944bd35b557e5bcb73,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8136f733bd07f4a99a2f3db4bc0e7ef3, type: 3}
