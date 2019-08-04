@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
 
     public Renderer[] renderers;
 
+    public CameraController camera;
+
     private void Awake()
     {
         floorMAsk = LayerMask.GetMask("Floor");
@@ -176,7 +178,9 @@ public class Player : MonoBehaviour
     {
         if (!isImmune)
         {
-            cameraAnim.SetTrigger("isShaking");
+
+            camera.ShakeElapsedTime = camera.ShakeDuration;
+
             health.CurrentVal -= damage;
 
             isImmune = true;
