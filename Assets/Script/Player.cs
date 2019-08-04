@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -125,7 +126,7 @@ public class Player : MonoBehaviour
 
             StartCoroutine(WaitingToShoot(1.0f));
 
-            //anim.SetBool("isAttacking", true);
+            anim.SetTrigger("isShooting");
         }
         /*else if(!Input.GetButtonDown("Fire1"))
         {
