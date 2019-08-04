@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -214,7 +215,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage, Collider collider)
     {
-        if (!isImmune)
+        if (!isImmune && health.CurrentVal > 0 )
         {
 
             camera.ShakeElapsedTime = camera.ShakeDuration;
@@ -230,6 +231,12 @@ public class Player : MonoBehaviour
 
         if (health.CurrentVal <= 0)
         {
+
+            renderers[0].enabled = !renderers[0].enabled;
+            renderers[1].enabled = !renderers[1].enabled;
+            renderers[2].enabled = !renderers[2].enabled;
+            renderers[3].enabled = !renderers[3].enabled;
+
             StartCoroutine(PlayerDeath());
         }
     }
@@ -257,11 +264,14 @@ public class Player : MonoBehaviour
     {
         gameOverSound.Play();
 
+
+
         while(gameOverSound.isPlaying)
         {
             yield return null; 
         }
 
-        Destroy(gameObject);
+
+        SceneManager.LoadScene("Menu");
     }
 }
