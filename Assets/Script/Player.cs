@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     private bool isImmune = false;
     private bool canShoot = true;
 
+    public Renderer[] renderers;
+
     private void Awake()
     {
         floorMAsk = LayerMask.GetMask("Floor");
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        //renderers = GetComponentsInChildren<Renderer>();
     }
 
     void Update()
@@ -223,8 +226,10 @@ public class Player : MonoBehaviour
         {
             duration -= Time.deltaTime;
 
-            this.GetComponent<Renderer>().enabled = !this.GetComponent<Renderer>().enabled;
-
+            renderers[0].enabled = !renderers[0].enabled;
+            renderers[1].enabled = !renderers[1].enabled;
+            renderers[2].enabled = !renderers[2].enabled;
+            renderers[3].enabled = !renderers[3].enabled;
             yield return new WaitForSeconds(blinkTime);
         }
 
