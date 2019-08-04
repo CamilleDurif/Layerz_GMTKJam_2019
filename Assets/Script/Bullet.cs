@@ -6,21 +6,12 @@ public class Bullet : MonoBehaviour
 {
     public int damage;
 
-    //private Camera mainCamera;
-    //public Vector2 widthThresold;
-    //public Vector2 heightThresold;
+    public float timer;
 
-    private void Awake()
-	{
-        //mainCamera = Camera.main;
-	}
-
-    /*void Update()
+    private void Start()
     {
-        Vector2 screenPosition = mainCamera.WorldToScreenPoint(transform.position);
-        if (screenPosition.x < widthThresold.x || screenPosition.x > widthThresold.y || screenPosition.y < heightThresold.x || screenPosition.y > heightThresold.y)
-            Destroy(gameObject);
-    }*/
+        StartCoroutine(bulletLifetime());
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,8 +22,18 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    /*private void OnBecameVisible()
+    private IEnumerator bulletLifetime()
     {
+        timer = 10f; 
+
+        while(timer > 1f)
+        {
+            timer -= timer * Time.deltaTime / 5f;
+
+            yield return null;
+        }
+
         Destroy(gameObject);
-    }*/
+    }
+
 }

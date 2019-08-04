@@ -1277,7 +1277,7 @@ PrefabInstance:
     - target: {fileID: 1931931463986387866, guid: 19424c14ceb2e07409aa95e104e775cc,
         type: 3}
       propertyPath: nbOfEnememies
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19424c14ceb2e07409aa95e104e775cc, type: 3}
@@ -3988,6 +3988,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 845681211}
+    - target: {fileID: 529137023441447284, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.878165
+      objectReference: {fileID: 0}
+    - target: {fileID: 529137023441447284, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.71588683
+      objectReference: {fileID: 0}
+    - target: {fileID: 529137023441447284, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.02611196
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94e301a573cdb8f449f7acaf143d0b72, type: 3}
 --- !u!1001 &8810740967052641325
