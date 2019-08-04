@@ -14,10 +14,13 @@ public class Enemy : MonoBehaviour
 
     public MeshRenderer[] renderers;
 
+    public AudioSource enemyDeathSound; 
+
 
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        //enemyDeathSound = GameObject.Find("enemy death").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,8 +37,8 @@ public class Enemy : MonoBehaviour
 
         if (health.CurrentVal <= 0)
         {
-            StartCoroutine(Blink(0.1f, 0.05f));
-            Destroy(gameObject);
+            StartCoroutine(deathBlink(0.1f, 0.05f));
+
         }
     }
 
@@ -46,8 +49,6 @@ public class Enemy : MonoBehaviour
         {
             duration -= Time.deltaTime;
 
-            Debug.Log(duration);
-
             for (int j = 0; j < renderers.Length; j++)
             {
                 renderers[j].enabled = !renderers[j].enabled;
@@ -56,5 +57,23 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(blinkTime);
         }
 
+    }
+
+    IEnumerator deathBlink(float duration, float blinkTime)
+    {
+        while (duration >= 0f)
+        {
+            duration -= Time.deltaTime;
+            enemyDeathSound.Play();
+
+            for (int j = 0; j < renderers.Length; j++)
+            {
+                renderers[j].enabled = !renderers[j].enabled;
+            }
+
+            yield return new WaitForSeconds(blinkTime);
+
+            Destroy(gameObject);
+        }
     }
 }

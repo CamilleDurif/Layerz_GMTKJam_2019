@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioSource theme; 
     // Start is called before the first frame update
     void Start()
     {
         //Cursor.visible = false;
+        theme.Play();
     }
 
     // Update is called once per frame

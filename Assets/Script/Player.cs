@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
 
     public CameraController camera;
 
+    public AudioSource gameOverSound; 
+
     private void Awake()
     {
         floorMAsk = LayerMask.GetMask("Floor");
@@ -197,6 +199,7 @@ public class Player : MonoBehaviour
 
         if (health.CurrentVal <= 0)
         {
+            gameOverSound.Play();
             Destroy(gameObject);
         }
     }
