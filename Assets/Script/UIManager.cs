@@ -95,16 +95,21 @@ public class UIManager : MonoBehaviour
         }
 
     }
-
+    
     private void wallsVisible(bool isVisible)
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Walls");
+        GameObject[] walls = GameObject.FindGameObjectsWithTag("Walls");
 
-        for (int i = 0; i < enemies.Length; i++)
+        for (int i = 0; i < walls.Length; i++)
         {
-            enemies[i].GetComponent<MeshRenderer>().enabled = isVisible;
+            if (walls[i].GetComponent<MeshRenderer>() != null)
+            {
+                walls[i].GetComponent<MeshRenderer>().enabled = isVisible;
+            }
         }
     }
+
+
 
     public int GetCurrentLayer()
     {

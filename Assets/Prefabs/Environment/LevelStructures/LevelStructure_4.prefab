@@ -744,6 +744,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8489908631114407514, guid: 1a956bb709c2b4be3b1b4b7a07307639,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489908631971077096, guid: 1a956bb709c2b4be3b1b4b7a07307639,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489908631883273082, guid: 1a956bb709c2b4be3b1b4b7a07307639,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441201477273967226, guid: 1a956bb709c2b4be3b1b4b7a07307639,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441201478846152814, guid: 1a956bb709c2b4be3b1b4b7a07307639,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441201478430459887, guid: 1a956bb709c2b4be3b1b4b7a07307639,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522421225291715596, guid: 1a956bb709c2b4be3b1b4b7a07307639,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522421226336683146, guid: 1a956bb709c2b4be3b1b4b7a07307639,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876537827816793477, guid: 1a956bb709c2b4be3b1b4b7a07307639,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: 822717480837298463, guid: 1a956bb709c2b4be3b1b4b7a07307639,
         type: 3}
       propertyPath: m_Size.x

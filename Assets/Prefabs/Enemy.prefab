@@ -60,7 +60,6 @@ MonoBehaviour:
   - {fileID: 3910981794817907489}
   - {fileID: 3162489142078311419}
   - {fileID: 7592027817881935465}
-  enemyDeathSound: {fileID: 0}
 --- !u!135 &4690529634048116679
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -72,8 +71,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.20729363
-  m_Center: {x: 0.04544586, y: 0, z: -0.03246492}
+  m_Radius: 0.22087178
+  m_Center: {x: 0.009990931, y: 0.11356461, z: 0.021198332}
 --- !u!195 &7330975384335946388
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -83,7 +82,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 770583540806951075}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.2
+  m_Radius: 0.32
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
