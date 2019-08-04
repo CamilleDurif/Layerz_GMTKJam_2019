@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI ammoText;
 
+    public Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)){
+        if (Input.GetKeyDown(KeyCode.Tab) && !player.isPaused){
             currentLayer++;
             if(currentLayer == 6) { currentLayer = 1; }
 
