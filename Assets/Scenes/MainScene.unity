@@ -153,6 +153,7 @@ MonoBehaviour:
   ammoLayer: {fileID: 1278951722}
   pauseLayer: {fileID: 1900820485}
   ammoText: {fileID: 847383154}
+  player: {fileID: 2124488002}
 --- !u!4 &94784286
 Transform:
   m_ObjectHideFlags: 0
@@ -324,8 +325,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845681209}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 3.0000005, z: 0.00000035762787}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -645,6 +646,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8136f733bd07f4a99a2f3db4bc0e7ef3, type: 3}
+--- !u!114 &1834751582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3039000842750163940, guid: e9965f2135d644ab093b638db015b08f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8810740967052641325}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1886105856
 GameObject:
   m_ObjectHideFlags: 3
@@ -826,6 +839,18 @@ MonoBehaviour:
   ShakeFrequency: 2
   ShakeElapsedTime: 0
   VirtualCamera: {fileID: 1966730370}
+--- !u!114 &2124488002 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5480769155812399584, guid: 94e301a573cdb8f449f7acaf143d0b72,
+    type: 3}
+  m_PrefabInstance: {fileID: 5480769154979976900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d61d0edaed2f24ebeffb86fcc3b2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1521453487804426299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -987,6 +1012,11 @@ PrefabInstance:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5480769155812399584, guid: 94e301a573cdb8f449f7acaf143d0b72,
+        type: 3}
+      propertyPath: pauseText
+      value: 
+      objectReference: {fileID: 1834751582}
     - target: {fileID: 1352667348, guid: 94e301a573cdb8f449f7acaf143d0b72, type: 3}
       propertyPath: m_Camera
       value: 
