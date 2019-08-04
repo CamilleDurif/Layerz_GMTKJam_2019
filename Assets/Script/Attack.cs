@@ -24,12 +24,9 @@ public class Attack : MonoBehaviour
             GameObject newSpell = Instantiate(spell, offset, transform.rotation);
             newSpell.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(spellForce, 0, 0));
 
-            //anim.SetBool("isAttacking", true);
+            anim.SetBool("isAttacking", true);
         }
-        /*else if(!Input.GetButtonDown("Fire1"))
-        {
-            anim.SetBool("isAttacking", false);
-        }*/
+
 	}
 
 }

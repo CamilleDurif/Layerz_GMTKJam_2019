@@ -49,7 +49,6 @@ public class Boss : MonoBehaviour
         if (health.CurrentVal <= 0)
         {
             StartCoroutine(deathBlink(0.1f, 0.05f));
-
         }
     }
 
@@ -88,8 +87,6 @@ public class Boss : MonoBehaviour
             theme.Stop();
             successSound.Play();
             winText.enabled = true;
-
-
         }
     }
 }

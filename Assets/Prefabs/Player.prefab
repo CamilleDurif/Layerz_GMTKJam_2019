@@ -5299,8 +5299,8 @@ MonoBehaviour:
     bar: {fileID: 6503175628500517354}
     maxVal: 100
     currentVal: 100
-  nbOfAmmo: 50
-  maxAmmo: 50
+  nbOfAmmo: 10
+  maxAmmo: 10
   speed: 2
   spell: {fileID: 8722638222721567659, guid: a0b4dc2b4fd0246ec900c8eae2491335, type: 3}
   spellForce: 500
@@ -5321,7 +5321,7 @@ SphereCollider:
   m_GameObject: {fileID: 5480769155812399590}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.16263814
   m_Center: {x: 0.017198913, y: 0.16265418, z: 0.004098734}
@@ -5335,10 +5335,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.110258
+  m_Radius: 0.14439479
   m_Height: 0.42565703
   m_Direction: 1
-  m_Center: {x: 0, y: 0.18387246, z: -0.007367626}
+  m_Center: {x: 0.007841527, y: 0.18387246, z: -0.0030001998}
 --- !u!1 &6503175628500517358
 GameObject:
   m_ObjectHideFlags: 0
@@ -5449,11 +5449,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5480769155812399597}
     m_Modifications:
-    - target: {fileID: -3701727588016112575, guid: 372032816a90742c082fcae135671961,
+    - target: {fileID: -927199367670048503, guid: 372032816a90742c082fcae135671961,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 41031f7a933cc4b06bdde059fb4a00fa, type: 2}
+      propertyPath: m_Name
+      value: CharacterModel
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 372032816a90742c082fcae135671961,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5509,16 +5509,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3701727588016112575, guid: 372032816a90742c082fcae135671961,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41031f7a933cc4b06bdde059fb4a00fa, type: 2}
     - target: {fileID: 8939468492834736797, guid: 372032816a90742c082fcae135671961,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3245f63450a1242dc88b5bceeb207626, type: 2}
-    - target: {fileID: -927199367670048503, guid: 372032816a90742c082fcae135671961,
-        type: 3}
-      propertyPath: m_Name
-      value: CharacterModel
-      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: 372032816a90742c082fcae135671961,
         type: 3}
       propertyPath: m_Controller

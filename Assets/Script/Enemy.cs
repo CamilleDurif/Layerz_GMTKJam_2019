@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     private AudioSource enemyDeathSound;
     private AudioSource damageSound;
 
+    public int damage; 
+
 
     void Awake()
     {
@@ -25,7 +27,7 @@ public class Enemy : MonoBehaviour
         damageSound = GameObject.Find("damage").GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         nav.SetDestination(player.position);
@@ -41,7 +43,6 @@ public class Enemy : MonoBehaviour
         if (health.CurrentVal <= 0)
         {
             StartCoroutine(deathBlink(0.1f, 0.05f));
-
         }
     }
 
@@ -79,4 +80,14 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+        }
+    }
+
+
 }
