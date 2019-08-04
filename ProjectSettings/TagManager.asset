@@ -8,6 +8,7 @@ TagManager:
   - Walls
   - EnemyModel
   - Boss
+  - Door
   layers:
   - Default
   - TransparentFX
