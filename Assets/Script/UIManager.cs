@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class UIManager : MonoBehaviour
     public const int HEALTH = 3;
     public const int AMMO = 4;
     public const int PAUSE = 5;
+
+    public TextMeshProUGUI ammoText;
 
 
     // Start is called before the first frame update
@@ -36,7 +39,7 @@ public class UIManager : MonoBehaviour
         }
 
         //updateUI
-        ammoLayer.GetComponentInChildren<Text>().text = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().nbOfAmmo.ToString();
+        ammoText.text = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().nbOfAmmo.ToString();
 
     }
 
