@@ -87,16 +87,10 @@ public class UIManager : MonoBehaviour
 
         for (int i = 0; i < enemies.Length; i++)
         {
-            Enemy enemy = enemies[i].GetComponent<Enemy>();
-
-            if (enemy != null) {
-
-                for (int j = 0; j < enemy.renderers.Length; j++)
-                {
-                    enemy.renderers[j].enabled = isVisible;
-                }
+            if (enemies[i].GetComponent<MeshRenderer>() != null)
+            {
+                enemies[i].GetComponent<MeshRenderer>().enabled = isVisible;
             }
-
         }
 
     }
