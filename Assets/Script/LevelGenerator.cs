@@ -10,15 +10,19 @@ public class LevelGenerator : MonoBehaviour
     public GameObject[] rooms;
     public GameObject bossRoom;
     public GameObject startRoom;
-    public GameObject keyRoom; 
+    public GameObject keyRoom;
+
+    public GameObject[] levelStructures;
       
     private Vector3 roomPosition;
+    private Vector3 levelPosition; 
 
     private int xModifier = 0;
     private int zModifier = 0;
 
     private int index;
     private GameObject room;
+    private GameObject levelStructure; 
 
     private bool keyRoomGenerated = false;
 
@@ -29,8 +33,19 @@ public class LevelGenerator : MonoBehaviour
     
     void Start()
     {
+        GenerateLevelStrucutre();
         ReturnIndexOfKeyRoom();
         SetupLevel();
+    }
+
+    private void GenerateLevelStrucutre()
+    {
+        index = Random.Range(0, levelStructures.Length);
+        levelStructure = levelStructures[index];
+
+        levelPosition = new Vector3(0, 0, 0);
+
+        GameObject newLevel = Instantiate(levelStructure, levelPosition, levelStructure.transform.rotation);
     }
 
     private void SetupLevel()
