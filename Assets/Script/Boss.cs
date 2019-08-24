@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -86,7 +87,16 @@ public class Boss : MonoBehaviour
 
             theme.Stop();
             successSound.Play();
-            winText.enabled = true;
+
+            while (successSound.isPlaying)
+            {
+                winText.enabled = true;
+                yield return null;
+            }
+
+
+            SceneManager.LoadScene("Menu");
+
         }
     }
 }

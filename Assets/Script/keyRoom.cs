@@ -25,10 +25,11 @@ public class keyRoom : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+       
         if(other.CompareTag("Player"))
         {
             anim.SetTrigger("isActivated");
-            StartCoroutine(bossRoomTextActived());
+            bossText.enabled = true;
 
             GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
             if(doors != null)
@@ -41,16 +42,4 @@ public class keyRoom : MonoBehaviour
         }
     }
 
-    IEnumerator bossRoomTextActived()
-    {
-        while (timer > 1)
-        {
-            bossText.enabled = true;
-            timer -= timer * Time.deltaTime;
-
-            yield return null;
-        }
-
-        bossText.enabled = false;
-    }
 }

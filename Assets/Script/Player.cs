@@ -255,6 +255,11 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(blinkTime);
         }
 
+        renderers[0].enabled = true;
+        renderers[1].enabled = true;
+        renderers[2].enabled = true;
+        renderers[3].enabled = true;
+
         isImmune = false;
     }
 
