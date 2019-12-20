@@ -32,6 +32,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Tab) && !player.isPaused){
             currentLayer++;
             if(currentLayer == 6) { currentLayer = 1; }

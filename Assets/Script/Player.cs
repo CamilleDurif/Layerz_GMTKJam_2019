@@ -209,11 +209,11 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            TakeDamage(10, other);
+            TakeDamage(10);
         }
     }
 
-    public void TakeDamage(int damage, Collider collider)
+    public void TakeDamage(int damage)
     {
         if (!isImmune && health.CurrentVal > 0 )
         {
@@ -225,7 +225,7 @@ public class Player : MonoBehaviour
 
             isImmune = true;
 
-            StartCoroutine(ImmunityAfterDamage(0.1f, 0.1f, collider));
+            StartCoroutine(ImmunityAfterDamage(0.1f, 0.1f));
 
         }
 
@@ -241,7 +241,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    IEnumerator ImmunityAfterDamage(float duration, float blinkTime, Collider collider)
+    IEnumerator ImmunityAfterDamage(float duration, float blinkTime)
     {
 
         while (duration >= 0f)
@@ -254,6 +254,11 @@ public class Player : MonoBehaviour
             renderers[3].enabled = !renderers[3].enabled;
             yield return new WaitForSeconds(blinkTime);
         }
+
+        renderers[0].enabled = true;
+        renderers[1].enabled = true;
+        renderers[2].enabled = true;
+        renderers[3].enabled = true;
 
         isImmune = false;
     }
